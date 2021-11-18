@@ -8,7 +8,7 @@ import Loader from '../../components/Loader';
 
 const PostDetails = ({ post }) => {
 
-    const categories = post.categories.map(category => category.slug);
+    const categories = post?.categories.map(category => category.slug);
     const router = useRouter();
 
     if(router.isFallback){
@@ -21,12 +21,12 @@ const PostDetails = ({ post }) => {
                 <div className='col-span-1 lg:col-span-8'>
                     <PostDetail post={post}/>
                     <Author author={post.author}/>
-                    <CommentsForm slug={post.slug}/>
-                    <Comments slug={post.slug}/>
+                    <CommentsForm slug={post?.slug}/>
+                    <Comments slug={post?.slug}/>
                 </div>
                 <div className='col-span-1 lg:col-span-4'>
                     <div className="relative lg:sticky top-8">
-                        <PostWidget slug={post.slug} categories={categories}/>
+                        <PostWidget slug={post?.slug} categories={categories}/>
                         <Categories />
                     </div>
                 </div>
